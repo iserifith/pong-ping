@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pong Ping</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color:gray">
+    <div id="app">
+      <div style="margin: 10px" class="container">
+        <div class="row">
+          <canvas
+            class="d-flex p-2 bd-highlight"
+            id="cvs"
+            width="700"
+            height="600"
+          ></canvas>
+          <div class="d-flex p-2 bd-highlight">
+            <div>
+              <div class="form-group">
+                <label for="ball.speed">Ball Speed : {{ ball.speed }}</label>
+                <input
+                  type="range"
+                  class="form-control"
+                  id="ball.speed"
+                  value="ball.speed"
+                  v-model="ball.speed"
+                  min="3"
+                  max="10"
+                  maxlength="10"
+                />
+              </div>
+              <div class="form-group">
+                <label v-bind:style="{color: net.color}" for="net.color"
+                  >Net Color : {{ net.color }}</label
+                >
+                <div>
+                  <input type="color" value="net.color" v-model="net.color" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label v-bind:style="{color: ball.color}" for="ball.color">
+                  Ball Color: {{ ball.color }}
+                </label>
+                <div>
+                  <input type="color" value="ball.color" v-model="ball.color" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label v-bind:style="{color: ai.color}" for="ai.color">
+                  AI Color: {{ ai.color }}
+                </label>
+                <div>
+                  <input type="color" value="ai.color" v-model="ai.color" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label v-bind:style="{color: user.color}" for="user.color">
+                  User Color: {{ user.color }}
+                </label>
+                <div>
+                  <input type="color" value="user.color" v-model="user.color" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label v-bind:style="{color: canvas}" for="canvas">
+                  Canvas Color: {{ canvas }}
+                </label>
+                <div>
+                  <input type="color" value="canvas" v-model="canvas" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="pong.js"></script>
+  </body>
+</html>
